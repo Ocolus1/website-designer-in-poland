@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* This is your global CSS Stylesheet */
+/* Change on your own risk */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+
+  /* This is the css for transparent mobile menu */
+  .main-nav-menu-mobile {
+    background: rgba(107, 106, 106, 0.5);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+  }
+
+  /* This is the redish-bluish gradient*/
+  .hero {
+    background-image: url(/src/assets/hero-gradient.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* This is the crossborder image in the hero section */
+  .hero::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(/src/assets/crossborder.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  /* Navbar --> Navbar.jsx */
+  .header-menu > ul > li {
+    border-bottom: 1px solid transparent;
+  }
+
+  .header-menu > ul > li:hover {
+    color: black;
+    border-bottom: 1px solid black;
+    width: fit-content;
+  }
+  .tag {
+    background: linear-gradient(269deg, #3951e5 0%, #e693a5 100%);
+    width: fit-content;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+  }
+
+  /* Hero-light-blue background */
+  .blue-background-container::before {
+    content: "";
+    position: absolute;
+    background-color: #d5f3fd50;
+    border: 1px solid #34be6340;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 200px;
+    z-index: -1;
+    border-radius: 30px;
+  }
+
+  /* Shadow for form-container on hero section */
+  .form-container {
+    filter: drop-shadow(11px 11px 35px rgba(101, 104, 102, 0.14));
+  }
+
+  /* Benefit Section light gray background*/
+  .gray-background-container::before {
+    content: "";
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #bfbfbf30;
+    top: 70px;
+    bottom: 70px;
+    left: 0;
+    right: 0px;
+    z-index: -1;
+    border-radius: 30px;
+  }
+
+  /* Mobile resoinsive */
+  @media screen and (max-width: 768px) {
+    .blue-background-container::before {
+      right: 0;
+      bottom: 200px;
+    }
+    .gray-background-container::before {
+      top: 0;
+      bottom: 70px;
+    }
+    .header-menu > ul > li:hover {
+      color: white;
+      border-bottom: 1px solid white;
+      width: fit-content;
+    }
+  }
+}
