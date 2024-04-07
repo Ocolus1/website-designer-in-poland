@@ -18,6 +18,14 @@ function HeroSection() {
 			window.removeEventListener('resize', handleResize);
 		};
 	}, []);
+
+	const scrollToForm = () => {
+		const formElement = document.getElementById('myForm');
+		if (formElement) {
+			formElement.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
+
 	return (
 		<div className="hero">
 			<Navbar />
@@ -34,16 +42,12 @@ function HeroSection() {
 						are designed to solve problems, save costs and improve
 						efficiency for your business
 					</p>
-					<div className="input-form max-w-xl mx-auto w-full flex items-center justify-center lg:justify-start gap-x-1 lg:gap-x-5 mt-7">
-						<div className="w-full">
-							<input
-								type="text"
-								placeholder="Your best email address"
-								className="py-2 px-5 lg:py-3 placeholder:text-sm rounded-lg w-full focus:outline-none ring-1 ring-[#0A071B] focus:ring-2 focus:ring-[#0A071B]"
-							/>
-						</div>
-						<button className="bg-[#304EE6] text-white w-1/3 hover:shadow-lg border border-transparent hover:drop-shadow transition duration-200 lg:w-1/3 font-semibold text-xs lg:text-base rounded-lg px-5 py-3">
-							{isDesktop ? 'Try it out' : 'Send'}
+					<div className="input-form max-w-xl mx-auto w-full flex items-center justify-center gap-x-1 lg:gap-x-5 mt-7">
+						<button
+							onClick={scrollToForm}
+							className="bg-[#304EE6] text-white w-1/3 hover:shadow-lg border border-transparent hover:drop-shadow transition duration-200 lg:w-1/3 font-semibold text-xs lg:text-base rounded-lg px-5 py-3"
+						>
+							Get Started
 						</button>
 					</div>
 				</div>

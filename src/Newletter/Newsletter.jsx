@@ -22,6 +22,7 @@ function Newsletter() {
 			name: name,
 			email: email,
 			message: message,
+			from: 'website-designer-in-poland',
 		};
 
 		fetch('https://submit-form.com/2KaifsAAB', {
@@ -50,7 +51,10 @@ function Newsletter() {
 	};
 
 	return (
-		<section className="cta__section max-w-4xl mx-auto py-24 px-5 lg:px-0">
+		<section
+			id="myForm"
+			className="cta__section max-w-4xl mx-auto py-24 px-5 lg:px-0"
+		>
 			<div
 				className=" bg-white p-10 rounded-2xl
         mx-auto flex flex-col gap-y-5 justify-center items-center"
